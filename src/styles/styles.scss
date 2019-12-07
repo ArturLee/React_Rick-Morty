@@ -1,0 +1,101 @@
+@import "mixins";
+
+$cols: 4;
+$margin: 10%;
+$backgroundColor: rgb(7, 36, 41);
+$equ: 100%/5;
+$map: (
+  key: value
+);
+
+body {
+  background-color: $backgroundColor;
+  font-family: "Oswald", sans-serif;
+}
+
+.title {
+  margin-top: 200px;
+  size: 100%/1;
+  @include center__title;
+}
+#grid {
+  ul {
+    list-style-type: none;
+  }
+  article {
+    border-radius: 10px;
+    float: left;
+    width: $equ;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 300px;
+    margin: 20px;
+    height: 500px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+    background: rgba(255, 255, 255, 0.438);
+    box-shadow: 0 6px 10px -5px rgba(0, 0, 0, 0.2);
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 60px -25px rgba(255, 255, 255, 0.5);
+    }
+    @include Name;
+  }
+
+  h2 {
+    width: 100%;
+    position: absolute;
+    top: 240px;
+    text-align: right;
+    right: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+  }
+}
+
+.info {
+  font-size: 13px;
+  margin: 0px 20px 0px 20px;
+  color: white;
+  text-transform: uppercase;
+}
+
+#pagination {
+  clear: both;
+  position: relative;
+  font-size: 15px;
+
+  max-width: 100%;
+  ul {
+    list-style-type: none;
+  }
+  a {
+    position: relative;
+    float: left;
+    color: white;
+    margin: 0 4px;
+    padding: 6px 9px 5px 9px;
+    text-decoration: none;
+    color: #ddd;
+
+    &:hover {
+      transform: translateY(-3px);
+    }
+  }
+}
+
+
+.shadow {
+    display: block;
+    position: relative;
+ }
+ .shadow:before {
+   box-shadow: inset 0px -60px 20px rgba(0, 0, 0, 0.6);
+   content: "";
+   height: 100%;
+   position: absolute;
+   width: 100%;
+ }
