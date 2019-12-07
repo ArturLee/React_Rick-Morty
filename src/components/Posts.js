@@ -2,7 +2,13 @@ import React from 'react'
 
 const Posts = ({ posts, loading }) => {
     if (loading) {
-        return <h2>Loading...</h2> //can do something prittier
+        return (
+            <div class="spinner">
+                <span class="spinner-inner-1"></span>
+                <span class="spinner-inner-2"></span>
+                <span class="spinner-inner-3"></span>
+            </div>
+        )
     }
 
     return (
@@ -22,12 +28,36 @@ const Posts = ({ posts, loading }) => {
                                     <hr />
                                     <span>status</span>
                                     <p>{characters.status}</p>
-
                                 </div>
                                 <div className='info'>
                                     <hr />
                                     <span>species</span>
                                     <p>{characters.species}</p>
+                                </div>
+                                <div className='info'>
+                                    <hr />
+                                    <span>sex</span>
+                                    <p>{characters.gender}</p>
+                                </div>
+                                <div className='info'>
+                                    <hr />
+                                    <span>origin</span>
+                                    <p>{characters.origin.name}</p>
+                                </div>
+                                <div className='info'>
+                                    <hr />
+                                    <span>last location</span>
+                                    <p>{characters.location.name}</p>
+                                </div>
+                                <div className='info'>
+                                    <hr />
+                                    <span>last dimension</span>
+                                    <p>{characters.location.name}</p>
+                                </div>
+                                <div className='info'>
+                                    <hr />
+                                    <span>last episode seen</span>
+                                    <p>{characters.episode[characters.episode.length]}</p>
                                 </div>
                             </article>
                         </div>

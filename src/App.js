@@ -19,7 +19,9 @@ const App = () => {
             setPosts(data.results)
             setNumberOfPages(data.info.pages)
             setLoading(false)
-            console.log('ads')
+            data.results.map(info => {
+                console.log(info.episode[0])
+            })
         }
         fetchPost()
     }, [])

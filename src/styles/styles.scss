@@ -4,9 +4,8 @@ $cols: 4;
 $margin: 10%;
 $backgroundColor: rgb(7, 36, 41);
 $equ: 100%/5;
-$map: (
-  key: value
-);
+$spinnersize: 100px;
+$spinnercolor: rgb(0, 140, 158); 
 
 body {
   background-color: $backgroundColor;
@@ -30,7 +29,7 @@ body {
     width: 100%;
     max-width: 300px;
     margin: 20px;
-    height: 500px;
+    min-height: 600px;
     cursor: pointer;
     transition: all 0.3s ease;
     text-align: left;
@@ -57,10 +56,27 @@ body {
 }
 
 .info {
-  font-size: 13px;
-  margin: 0px 20px 0px 20px;
-  color: white;
+  font-weight: bold;
+  font-size: 10px;
+  
   text-transform: uppercase;
+  margin: -10px 20px -10px 20px;
+  span {
+    text-align: left;
+    width:50%;
+    display: inline-block;
+    color: white;
+  }
+  p {
+    text-align: right;
+    width:50%;
+    display: inline-block;
+    color: white;
+  }
+  hr {
+    clear: both;
+    color: rgba(0, 0, 0, 0.2);
+  }
 }
 
 #pagination {
@@ -87,15 +103,54 @@ body {
   }
 }
 
-
 .shadow {
-    display: block;
-    position: relative;
- }
- .shadow:before {
-   box-shadow: inset 0px -60px 20px rgba(0, 0, 0, 0.6);
-   content: "";
-   height: 100%;
-   position: absolute;
-   width: 100%;
- }
+  display: block;
+  position: relative;
+}
+.shadow:before {
+  box-shadow: inset 0px -60px 20px rgba(0, 0, 0, 0.6);
+  content: "";
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+
+// ----- loading spinner 
+.spinner {
+    position: absolute;
+    top: calc(50% - #{$spinnersize / 2});
+    left: calc(50% - #{$spinnersize / 2});
+    width: $spinnersize;
+    height: $spinnersize;
+    animation: spinner 0.75s linear infinite;
+  
+    span {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+    }
+    
+    .spinner-inner-1 {
+      background: linear-gradient(to right, rgba($spinnercolor,0) 0%,rgba($spinnercolor,0) 50%,$spinnercolor 51%);
+    }
+    
+    .spinner-inner-2 {
+      background: linear-gradient(to top, rgba($backgroundColor,0) 0%,$backgroundColor 100%);
+    }
+    
+    .spinner-inner-3 {
+      $offset: $spinnersize * 0.1;
+      top: $offset;
+      left: $offset;
+      width: $spinnersize - ($offset * 2);
+      height: $spinnersize - ($offset * 2);
+      background: $backgroundColor;
+    }
+  }
+  
+  @keyframes spinner {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
