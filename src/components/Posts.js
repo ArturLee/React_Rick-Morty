@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Posts = ({ posts, loading }) => {
+const Posts = ({ posts, loading, episodenumber, episodeName }) => {
     if (loading) {
         return (
             <div className="spinner">
@@ -10,12 +10,42 @@ const Posts = ({ posts, loading }) => {
             </div>
         )
     }
+    function getOrigin(character) {
+        const origin = character.origin.name.split('(')[0]
+        return origin
+    }
+
+    function getlastlocation(character) {
+        const lastlocation = character.location.name.split('(')[0]
+        return lastlocation;
+    }
+
+    function getlastdimension(character) {
+        const locationname = character.location.name
+        const locationDimension = locationname.split('(')[1]
+        if (!locationDimension) { return "unknown" }
+        const lastDimension = locationDimension.slice(0, -1)
+        return lastDimension
+    }
+
+    function getlastepisode(character) {
+        const episodelink = character.episode[character.episode.length - 1]
+        const episodenum = episodelink.split('/')[5]
+        return episodenum
+    }
+
+    function getlastepisodename(character) {
+        const episodelink = character.episode[character.episode.length - 1]
+        const episodenum = parseInt(episodelink.split('/')[5])
+        //episodenumber(episodenum)
+        return episodeName
+    }
+
     // for (let i = 0; i <= posts.length; i++) {
     //     posts[i].episode.map(episodes => {
-            
+
     //     })
     // }
-    let num = 'a'; 
     return (
         <div id='grid'>
             <ul>
@@ -47,24 +77,23 @@ const Posts = ({ posts, loading }) => {
                                 <div className='info'>
                                     <hr />
                                     <span>origin</span>
-                                    <p>{characters.origin.name.split('(')[0]}</p>
+                                    <p>{getOrigin(characters)}</p>
                                 </div>
                                 <div className='info'>
                                     <hr />
                                     <span>last location</span>
-                                    <p>{characters.location.name.split('(')[0]}</p>
+                                    <p>{getlastlocation(characters)}</p>
                                 </div>
                                 <div className='info'>
                                     <hr />
                                     <span>last dimension</span>
-                                    <p alt='none'>{characters.location.name.split('(')[1]}</p>
+                                    <p>{getlastdimension(characters)}</p>
                                 </div>
                                 <div className='info'>
                                     <hr />
                                     <span>last episode seen</span>
-                                    {console.log((characters.episode[characters.episode.length-1]))}
-                                    <p>{characters.episode[characters.episode.length-1].split('/')[5].toString()}
-                                    {characters.episode[characters.episode.length-1]}</p>
+                                    <p>{getlastepisode(characters)}
+                                        {getlastepisodename(characters)}</p>
                                 </div>
                             </article>
                         </div>
