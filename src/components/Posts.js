@@ -3,14 +3,19 @@ import React from 'react'
 const Posts = ({ posts, loading }) => {
     if (loading) {
         return (
-            <div class="spinner">
-                <span class="spinner-inner-1"></span>
-                <span class="spinner-inner-2"></span>
-                <span class="spinner-inner-3"></span>
+            <div className="spinner">
+                <span className="spinner-inner-1"></span>
+                <span className="spinner-inner-2"></span>
+                <span className="spinner-inner-3"></span>
             </div>
         )
     }
-
+    // for (let i = 0; i <= posts.length; i++) {
+    //     posts[i].episode.map(episodes => {
+            
+    //     })
+    // }
+    let num = 'a'; 
     return (
         <div id='grid'>
             <ul>
@@ -42,22 +47,24 @@ const Posts = ({ posts, loading }) => {
                                 <div className='info'>
                                     <hr />
                                     <span>origin</span>
-                                    <p>{characters.origin.name}</p>
+                                    <p>{characters.origin.name.split('(')[0]}</p>
                                 </div>
                                 <div className='info'>
                                     <hr />
                                     <span>last location</span>
-                                    <p>{characters.location.name}</p>
+                                    <p>{characters.location.name.split('(')[0]}</p>
                                 </div>
                                 <div className='info'>
                                     <hr />
                                     <span>last dimension</span>
-                                    <p>{characters.location.name}</p>
+                                    <p alt='none'>{characters.location.name.split('(')[1]}</p>
                                 </div>
                                 <div className='info'>
                                     <hr />
                                     <span>last episode seen</span>
-                                    <p>{characters.episode[characters.episode.length]}</p>
+                                    {console.log((characters.episode[characters.episode.length-1]))}
+                                    <p>{characters.episode[characters.episode.length-1].split('/')[5].toString()}
+                                    {characters.episode[characters.episode.length-1]}</p>
                                 </div>
                             </article>
                         </div>

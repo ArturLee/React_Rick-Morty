@@ -5,7 +5,7 @@ $margin: 10%;
 $backgroundColor: rgb(7, 36, 41);
 $equ: 100%/5;
 $spinnersize: 100px;
-$spinnercolor: rgb(0, 140, 158); 
+$spinnercolor: rgb(0, 140, 158);
 
 body {
   background-color: $backgroundColor;
@@ -18,12 +18,14 @@ body {
   @include center__title;
 }
 #grid {
+ 
   ul {
+
     list-style-type: none;
   }
   article {
+      float: left;
     border-radius: 10px;
-    float: left;
     width: $equ;
     box-sizing: border-box;
     width: 100%;
@@ -58,18 +60,18 @@ body {
 .info {
   font-weight: bold;
   font-size: 10px;
-  
+
   text-transform: uppercase;
   margin: -10px 20px -10px 20px;
   span {
     text-align: left;
-    width:50%;
+    width: 50%;
     display: inline-block;
     color: white;
   }
   p {
     text-align: right;
-    width:50%;
+    width: 50%;
     display: inline-block;
     color: white;
   }
@@ -115,42 +117,45 @@ body {
   width: 100%;
 }
 
-
-// ----- loading spinner 
+// ----- loading spinner
 .spinner {
+  position: absolute;
+  top: calc(50% - #{$spinnersize / 2});
+  left: calc(50% - #{$spinnersize / 2});
+  width: $spinnersize;
+  height: $spinnersize;
+  animation: spinner 0.75s linear infinite;
+
+  span {
     position: absolute;
-    top: calc(50% - #{$spinnersize / 2});
-    left: calc(50% - #{$spinnersize / 2});
-    width: $spinnersize;
-    height: $spinnersize;
-    animation: spinner 0.75s linear infinite;
-  
-    span {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-    }
-    
-    .spinner-inner-1 {
-      background: linear-gradient(to right, rgba($spinnercolor,0) 0%,rgba($spinnercolor,0) 50%,$spinnercolor 51%);
-    }
-    
-    .spinner-inner-2 {
-      background: linear-gradient(to top, rgba($backgroundColor,0) 0%,$backgroundColor 100%);
-    }
-    
-    .spinner-inner-3 {
-      $offset: $spinnersize * 0.1;
-      top: $offset;
-      left: $offset;
-      width: $spinnersize - ($offset * 2);
-      height: $spinnersize - ($offset * 2);
-      background: $backgroundColor;
-    }
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
   }
-  
-  @keyframes spinner {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+
+  .spinner-inner-1 {
+    background: linear-gradient(to right, rgba($spinnercolor, 0) 0%, rgba($spinnercolor, 0) 50%, $spinnercolor 51%);
   }
+
+  .spinner-inner-2 {
+    background: linear-gradient(to top, rgba($backgroundColor, 0) 0%, $backgroundColor 100%);
+  }
+
+  .spinner-inner-3 {
+    $offset: $spinnersize * 0.1;
+    top: $offset;
+    left: $offset;
+    width: $spinnersize - ($offset * 2);
+    height: $spinnersize - ($offset * 2);
+    background: $backgroundColor;
+  }
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
