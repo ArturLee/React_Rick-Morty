@@ -60,9 +60,8 @@ body {
 .info {
   font-weight: bold;
   font-size: 10px;
-
   text-transform: uppercase;
-  margin: -10px 20px -10px 20px;
+  margin: 10px 20px -10px 20px;
   span {
     text-align: left;
     width: 50%;
@@ -110,6 +109,7 @@ body {
   position: relative;
 }
 .shadow:before {
+  bottom: 4px;
   box-shadow: inset 0px -60px 20px rgba(0, 0, 0, 0.6);
   content: "";
   height: 100%;

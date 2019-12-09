@@ -1,7 +1,7 @@
 import React from 'react'
 
-const Posts = ({ posts, loading, episodenumber, episodeName }) => {
-    if (loading) {
+const Posts = props => {
+    if (props.loading) {
         return (
             <div className="spinner">
                 <span className="spinner-inner-1"></span>
@@ -10,95 +10,53 @@ const Posts = ({ posts, loading, episodenumber, episodeName }) => {
             </div>
         )
     }
-    function getOrigin(character) {
-        const origin = character.origin.name.split('(')[0]
-        return origin
-    }
-
-    function getlastlocation(character) {
-        const lastlocation = character.location.name.split('(')[0]
-        return lastlocation;
-    }
-
-    function getlastdimension(character) {
-        const locationname = character.location.name
-        const locationDimension = locationname.split('(')[1]
-        if (!locationDimension) { return "unknown" }
-        const lastDimension = locationDimension.slice(0, -1)
-        return lastDimension
-    }
-
-    function getlastepisode(character) {
-        const episodelink = character.episode[character.episode.length - 1]
-        const episodenum = episodelink.split('/')[5]
-        return episodenum
-    }
-
-    function getlastepisodename(character) {
-        const episodelink = character.episode[character.episode.length - 1]
-        const episodenum = parseInt(episodelink.split('/')[5])
-        //episodenumber(episodenum)
-        return episodeName
-    }
-
-    // for (let i = 0; i <= posts.length; i++) {
-    //     posts[i].episode.map(episodes => {
-
-    //     })
-    // }
+    
     return (
         <div id='grid'>
             <ul>
-                {posts.map(characters => (
-                    <li key={characters.id}>
-                        <div>
-                            <article>
-                                <header>
-                                    <div className='shadow'>
-                                        <img src={characters.image} alt={characters.name} className='card__img' />
-                                    </div>
-                                    <h2>{characters.name}</h2>
-                                </header>
-                                <div className='info'>
-                                    <hr />
-                                    <span>status</span>
-                                    <p>{characters.status}</p>
-                                </div>
-                                <div className='info'>
-                                    <hr />
-                                    <span>species</span>
-                                    <p>{characters.species}</p>
-                                </div>
-                                <div className='info'>
-                                    <hr />
-                                    <span>sex</span>
-                                    <p>{characters.gender}</p>
-                                </div>
-                                <div className='info'>
-                                    <hr />
-                                    <span>origin</span>
-                                    <p>{getOrigin(characters)}</p>
-                                </div>
-                                <div className='info'>
-                                    <hr />
-                                    <span>last location</span>
-                                    <p>{getlastlocation(characters)}</p>
-                                </div>
-                                <div className='info'>
-                                    <hr />
-                                    <span>last dimension</span>
-                                    <p>{getlastdimension(characters)}</p>
-                                </div>
-                                <div className='info'>
-                                    <hr />
-                                    <span>last episode seen</span>
-                                    <p>{getlastepisode(characters)}
-                                        {getlastepisodename(characters)}</p>
-                                </div>
-                            </article>
+                <article>
+                    <header>
+                        <div className='shadow'>
+                            <img src={props.img} alt={props.name} className='card__img' />
                         </div>
-                    </li>
-                ))}
+                        <h2>{props.name}</h2>
+                        {console.log('1')}
+                    </header>
+                    <div className='info'>
+                        <span>status</span>
+                        <p>{props.status}</p>
+                    </div>
+                    <div className='info'>
+                        <hr />
+                        <span>species</span>
+                        <p>{props.species}</p>
+                    </div>
+                    <div className='info'>
+                        <hr />
+                        <span>sex</span>
+                        <p>{props.sex}</p>
+                    </div>
+                    <div className='info'>
+                        <hr />
+                        <span>origin</span>
+                        <p>{props.origin}</p>
+                    </div>
+                    <div className='info'>
+                        <hr />
+                        <span>last location</span>
+                        <p>{props.lastlocation}</p>
+                    </div>
+                    <div className='info'>
+                        <hr />
+                        <span>last dimension</span>
+                        <p>{props.lastdimension}</p>
+                    </div>
+                    <div className='info'>
+                        <hr />
+                        <span>last episode seen</span>
+                        <p>ep. {props.lastepisode}</p>
+                    </div>
+                </article>
             </ul>
         </div>
     )
