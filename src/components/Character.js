@@ -1,17 +1,12 @@
 import React from 'react'
+import Spinner from './Spinner'
 
-const Posts = props => {
-    if (props.loading) {
-        return (
-            <div className="spinner">
-                <span className="spinner-inner-1"></span>
-                <span className="spinner-inner-2"></span>
-                <span className="spinner-inner-3"></span>
-            </div>
-        )
-    }
-    
-    return (
+
+export default (props) => {
+
+	 return (props.loading)
+	 	?	<Spinner />
+		:	(
         <div id='grid'>
             <ul>
                 <article>
@@ -20,7 +15,6 @@ const Posts = props => {
                             <img src={props.img} alt={props.name} className='card__img' />
                         </div>
                         <h2>{props.name}</h2>
-                        {console.log('1')}
                     </header>
                     <div className='info'>
                         <span>status</span>
@@ -54,12 +48,12 @@ const Posts = props => {
                     <div className='info'>
                         <hr />
                         <span>last episode seen</span>
-                        <p>ep. {props.lastepisode}</p>
+                        <p>ep. {props.lastepisode} <br/>
+                        {props.lastepisodename}</p>
+                        {console.log('2')}
                     </div>
                 </article>
             </ul>
         </div>
     )
 }
-
-export default Posts

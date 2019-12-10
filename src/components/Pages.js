@@ -1,28 +1,28 @@
 import React from 'react'
 
-const Pages = ({ totalPages, page }) => {
-    const numberOfPages = parseInt(totalPages)
-    const pageNumbers = []
+export default ({ totalPages, setPage }) => {
+    const listItem = (number) => {
+        return (
+            <li key={number}>
+                <a onClick={() => setPage(number)} href='!#'>
+                    {number}
+                </a>
+            </li>
+        )
+    }
 
-    for (let i = 1; i <= numberOfPages; i++) {
-        pageNumbers.push(i)
+    const list = () => {
+        const items = []
+        for (let n = 1; n <= totalPages; n++) {
+            items.push(listItem(n))
+        }
+        return (<ul> {items} </ul>)
     }
 
 
     return (
         <nav id='pagination'>
-            <ul>
-                {pageNumbers.map(number => (
-                    <li key={number}>
-                        <a onClick={() => page(number)} href='!#'>
-                            {number}
-                        </a>
-                    </li>
-                ))}
-            </ul>
-
+            {list()}
         </nav>
     )
 }
-
-export default Pages
