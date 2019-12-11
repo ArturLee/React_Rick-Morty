@@ -13,8 +13,8 @@ export default ({ totalPages, setPage }) => {
 
     const list = () => {
         const items = []
-        for (let n = 1; n <= totalPages; n++) {
-            items.push(listItem(n))
+        for (let i = 1; i <= totalPages; i++) {
+            items.push(listItem(i))
         }
         return (<ul> {items} </ul>)
     }

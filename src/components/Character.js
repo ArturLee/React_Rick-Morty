@@ -4,10 +4,9 @@ import Spinner from './Spinner'
 
 export default (props) => {
 
-	 return (props.loading)
-	 	?	<Spinner />
-		:	(
-        <div id='grid'>
+    return (props.loading)
+        ? <Spinner />
+        : (
             <ul>
                 <article>
                     <header>
@@ -15,13 +14,9 @@ export default (props) => {
                             <img src={props.img} alt={props.name} className='card__img' />
                         </div>
                         <h2>{props.name}</h2>
+                        <h3>{props.status}</h3>
                     </header>
                     <div className='info'>
-                        <span>status</span>
-                        <p>{props.status}</p>
-                    </div>
-                    <div className='info'>
-                        <hr />
                         <span>species</span>
                         <p>{props.species}</p>
                     </div>
@@ -48,12 +43,11 @@ export default (props) => {
                     <div className='info'>
                         <hr />
                         <span>last episode seen</span>
-                        <p>ep. {props.lastepisode} <br/>
-                        {props.lastepisodename}</p>
+                        <p>ep. {props.lastepisode} <br />
+                            {props.lastepisodename}</p>
                         {console.log('2')}
                     </div>
                 </article>
             </ul>
-        </div>
-    )
+        )
 }
