@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "047eecf7083a07d6c4bd4954b47626f7",
+    "revision": "92226e1bc24e03d0473d22de5108d4c8",
     "url": "/React_Rick-Morty/index.html"
   },
   {
-    "revision": "2993e06ec78763182146",
-    "url": "/React_Rick-Morty/static/css/main.f83108a6.chunk.css"
+    "revision": "a03a02a24dd7b6c43992",
+    "url": "/React_Rick-Morty/static/css/main.2cfa46ce.chunk.css"
   },
   {
     "revision": "dcfce0b1306129ddb683",
@@ -16,7 +16,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/React_Rick-Morty/static/js/2.992ad8e3.chunk.js.LICENSE"
   },
   {
-    "revision": "2993e06ec78763182146",
+    "revision": "a03a02a24dd7b6c43992",
     "url": "/React_Rick-Morty/static/js/main.6065b108.chunk.js"
   },
   {
