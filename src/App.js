@@ -20,6 +20,7 @@ export default () => {
 
     useEffect(() => {
         setLoading(true)
+
         axios.get(`${API_URL}character/`).then(data => {
             setNumberOfPages(data.data.info.pages)
             setCountCharacters(data.data.info.count)
@@ -38,14 +39,14 @@ export default () => {
     useEffect(() => {
 
         setLoading(true)
+
         if (countEpisodes) {
 
             let count_array = []
-
             for (let i = 1; i <= countEpisodes; i++) {
-
                 count_array.push(i)
             }
+
             axios.get(`${API_URL}episode/${count_array}`).then((data) => {
                 setepisodes(data.data)
                 setLoading(false)
@@ -77,7 +78,7 @@ export default () => {
                     <div>
                         <img className='title' src="https://carlisletheacarlisletheatre.org/images/rick-and-morty-logo-svg-3.png" alt='Rick and Morty' />
                         <CharactersData currentpage={currentpage} episodesList={episodesList} countCharacters={countCharacters} />
-                        <Pages totalPages={pages} setPage={setCurrentPage} currentpage={currentpage} />
+                        {/* <Pages totalPages={pages} setPage={setCurrentPage} currentpage={currentpage} /> */}
                     </div>
                 )}
         </div>

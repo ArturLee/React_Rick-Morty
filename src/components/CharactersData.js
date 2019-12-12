@@ -5,6 +5,7 @@ import { API_URL } from '../constants'
 
 
 
+
 const getEpisodeNumber = (character) => {
     const episodelink = character.episode[character.episode.length - 1]
     return episodelink.split('/episode/')[1]
@@ -36,11 +37,11 @@ export default function Characters({ currentpage, episodesList, countCharacters 
     // }, [currentPage])
 
 
-//
-// -------- Some picture doesnt load and throw error
-//
+    //
+    // -------- Some picture doesnt load and throw error
+    //
 
-    useEffect(() => { 
+    useEffect(() => {
         setLoading(true)
         if (countCharacters) {
             let count_array = []
@@ -58,7 +59,6 @@ export default function Characters({ currentpage, episodesList, countCharacters 
     }, [countCharacters])
 
     useEffect(() => {
-
         if (characterList) {
             setCharacter(characterList)
             setLoading(false)
@@ -81,6 +81,7 @@ export default function Characters({ currentpage, episodesList, countCharacters 
                 lastepisodename={getlastepisodename(episodesList, getEpisodeNumber(character))}
                 loading={loading}
 
+                //Get all episodes to show at the back of the card
                 allepisodes={getAllEpisodes(character)}
             />
 
@@ -88,12 +89,13 @@ export default function Characters({ currentpage, episodesList, countCharacters 
         )
     }
     return (
-        <div>
+        <div className="main-nav">
+            <h1 className="title">Characters</h1>
+            <p className="c-count">count - {characters.length}</p>
             <div id='grid'>
                 {characters.map(renderCharacter)}
             </div>
         </div>
-
     )
 }
 
