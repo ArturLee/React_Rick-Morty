@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/React_Rick-Morty/static/css/main.9c0c5ccf.chunk.css",
+    "main.css": "/React_Rick-Morty/static/css/main.f83108a6.chunk.css",
     "main.js": "/React_Rick-Morty/static/js/main.6065b108.chunk.js",
     "main.js.map": "/React_Rick-Morty/static/js/main.6065b108.chunk.js.map",
     "runtime-main.js": "/React_Rick-Morty/static/js/runtime-main.d49b7522.js",
@@ -8,15 +8,15 @@
     "static/js/2.992ad8e3.chunk.js": "/React_Rick-Morty/static/js/2.992ad8e3.chunk.js",
     "static/js/2.992ad8e3.chunk.js.map": "/React_Rick-Morty/static/js/2.992ad8e3.chunk.js.map",
     "index.html": "/React_Rick-Morty/index.html",
-    "precache-manifest.59ba3466b7e458c09aa30c64704094d5.js": "/React_Rick-Morty/precache-manifest.59ba3466b7e458c09aa30c64704094d5.js",
+    "precache-manifest.99a340856ab316cedb97ceab2546ab73.js": "/React_Rick-Morty/precache-manifest.99a340856ab316cedb97ceab2546ab73.js",
     "service-worker.js": "/React_Rick-Morty/service-worker.js",
-    "static/css/main.9c0c5ccf.chunk.css.map": "/React_Rick-Morty/static/css/main.9c0c5ccf.chunk.css.map",
+    "static/css/main.f83108a6.chunk.css.map": "/React_Rick-Morty/static/css/main.f83108a6.chunk.css.map",
     "static/js/2.992ad8e3.chunk.js.LICENSE": "/React_Rick-Morty/static/js/2.992ad8e3.chunk.js.LICENSE"
   },
   "entrypoints": [
     "static/js/runtime-main.d49b7522.js",
     "static/js/2.992ad8e3.chunk.js",
-    "static/css/main.9c0c5ccf.chunk.css",
+    "static/css/main.f83108a6.chunk.css",
     "static/js/main.6065b108.chunk.js"
   ]
 }
