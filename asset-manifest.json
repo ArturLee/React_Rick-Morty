@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/github.io/React_Rick-Morty/static/css/main.9c0c5ccf.chunk.css",
-    "main.js": "/github.io/React_Rick-Morty/static/js/main.e8f06c20.chunk.js",
-    "main.js.map": "/github.io/React_Rick-Morty/static/js/main.e8f06c20.chunk.js.map",
-    "runtime-main.js": "/github.io/React_Rick-Morty/static/js/runtime-main.58303dd2.js",
-    "runtime-main.js.map": "/github.io/React_Rick-Morty/static/js/runtime-main.58303dd2.js.map",
-    "static/js/2.06a5cb95.chunk.js": "/github.io/React_Rick-Morty/static/js/2.06a5cb95.chunk.js",
-    "static/js/2.06a5cb95.chunk.js.map": "/github.io/React_Rick-Morty/static/js/2.06a5cb95.chunk.js.map",
-    "index.html": "/github.io/React_Rick-Morty/index.html",
-    "precache-manifest.be1ce06d41267217d7c9791d642b1bcf.js": "/github.io/React_Rick-Morty/precache-manifest.be1ce06d41267217d7c9791d642b1bcf.js",
-    "service-worker.js": "/github.io/React_Rick-Morty/service-worker.js",
-    "static/css/main.9c0c5ccf.chunk.css.map": "/github.io/React_Rick-Morty/static/css/main.9c0c5ccf.chunk.css.map",
-    "static/js/2.06a5cb95.chunk.js.LICENSE": "/github.io/React_Rick-Morty/static/js/2.06a5cb95.chunk.js.LICENSE"
+    "main.css": "/React_Rick-Morty/static/css/main.9c0c5ccf.chunk.css",
+    "main.js": "/React_Rick-Morty/static/js/main.e8f06c20.chunk.js",
+    "main.js.map": "/React_Rick-Morty/static/js/main.e8f06c20.chunk.js.map",
+    "runtime-main.js": "/React_Rick-Morty/static/js/runtime-main.d49b7522.js",
+    "runtime-main.js.map": "/React_Rick-Morty/static/js/runtime-main.d49b7522.js.map",
+    "static/js/2.06a5cb95.chunk.js": "/React_Rick-Morty/static/js/2.06a5cb95.chunk.js",
+    "static/js/2.06a5cb95.chunk.js.map": "/React_Rick-Morty/static/js/2.06a5cb95.chunk.js.map",
+    "index.html": "/React_Rick-Morty/index.html",
+    "precache-manifest.c8cdf3207a3f71d9c97cc73fe52b7fd5.js": "/React_Rick-Morty/precache-manifest.c8cdf3207a3f71d9c97cc73fe52b7fd5.js",
+    "service-worker.js": "/React_Rick-Morty/service-worker.js",
+    "static/css/main.9c0c5ccf.chunk.css.map": "/React_Rick-Morty/static/css/main.9c0c5ccf.chunk.css.map",
+    "static/js/2.06a5cb95.chunk.js.LICENSE": "/React_Rick-Morty/static/js/2.06a5cb95.chunk.js.LICENSE"
   },
   "entrypoints": [
-    "static/js/runtime-main.58303dd2.js",
+    "static/js/runtime-main.d49b7522.js",
     "static/js/2.06a5cb95.chunk.js",
     "static/css/main.9c0c5ccf.chunk.css",
     "static/js/main.e8f06c20.chunk.js"
