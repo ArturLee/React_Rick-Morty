@@ -19,30 +19,62 @@ body {
 }
 #grid {
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
-  max-width: 1500px;
+  max-width: 1300px;
   margin: 0 auto;
   ul {
     list-style-type: none;
   }
-  article {
+
+  .flip-card-container {
+    @include card;
     border-radius: 10px;
-    width: $equ;
-    box-sizing: border-box;
+  }
+
+  .flip-card {
+    position: relative;
     width: 100%;
-    max-width: 280px;
-    margin: 20px;
-    min-height: 500px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-align: left;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+  }
+
+  &:checked ~ .flip-card {
+    transform: rotateY(180deg);
+  }
+
+  .flip-card-container:hover .flip-card {
+    transform: rotateY(180deg);
+    animation-delay: 2s;
+  }
+
+  .flip-card-front,
+  .flip-card-back {
+    border-radius: 10px;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+  }
+  .flip-card-front {
+    @include Name;
     background: rgba(255, 255, 255, 0.438);
     box-shadow: 0 6px 10px -5px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    text-align: left;
+    perspective: 1000px;
     &:hover {
       transform: translateY(-5px);
       box-shadow: 0 20px 60px -25px rgba(255, 255, 255, 0.5);
     }
-    @include Name;
+  }
+  .flip-card-back {
+    position: absolute;
+    top: 0;
+    background: rgba(255, 255, 255, 0.438);
+    transform: rotateY(180deg);
   }
 
   .shadow {
@@ -106,9 +138,32 @@ body {
   }
 }
 
+.card-back-info {
+  font-weight: bold;
+
+  text-transform: uppercase;
+  margin: 10px 20px -10px 20px;
+  h1 {
+    color: white;
+    text-align: center;
+  }
+  span {
+    display: inline-block;
+    margin: auto;
+    height: 20px;
+    width: 20px;
+    line-height: 20px;
+    border-radius: 50%;
+    font-size: 10px;
+    background-color: white;
+    color: black;
+    text-align: center;
+  }
+}
+
 #pagination {
   max-width: 1050px;
-  margin: 0 auto; 
+  margin: 0 auto;
   position: relative;
   font-size: 15px;
   ul {
@@ -123,7 +178,10 @@ body {
     text-decoration: none;
     color: #ddd;
 
-    &:hover {
+    &:hover{
+      color: lighten($backgroundColor, 60);
+    }
+    &:active{
       color: lighten($backgroundColor, 60);
     }
   }

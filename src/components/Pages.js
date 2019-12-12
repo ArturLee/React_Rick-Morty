@@ -1,6 +1,7 @@
 import React from 'react'
 
-export default ({ totalPages, setPage }) => {
+export default ({ totalPages, setPage, currentpage }) => {
+
     const listItem = (number) => {
         return (
             <li key={number}>
@@ -18,7 +19,6 @@ export default ({ totalPages, setPage }) => {
         }
         return (<ul> {items} </ul>)
     }
-
 
     return (
         <nav id='pagination'>

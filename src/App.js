@@ -6,9 +6,10 @@ import { API_URL } from './constants'
 import './styles/styles.scss'
 
 export default () => {
+    const [loading, setLoading] = useState(false)
 
     const [pages, setNumberOfPages] = useState()
-    const [loading, setLoading] = useState(false)
+    const [countCharacters, setCountCharacters] = useState()
     const [currentpage, setCurrentPage] = useState(1)
 
 
@@ -18,19 +19,22 @@ export default () => {
 
 
     useEffect(() => {
-
         setLoading(true)
         axios.get(`${API_URL}character/`).then(data => {
             setNumberOfPages(data.data.info.pages)
+            setCountCharacters(data.data.info.count)
 
-        })
+        }).catch(err => console.log(err))
+
         axios.get(`${API_URL}episode/`).then(data => {
             setCountEpisodes(data.data.info.count)
-        })
 
+        }).catch(err => console.log(err))
     }, [])
 
-
+    //
+    // --------- Fetch All Episodes from the API
+    //
     useEffect(() => {
 
         setLoading(true)
@@ -45,10 +49,11 @@ export default () => {
             axios.get(`${API_URL}episode/${count_array}`).then((data) => {
                 setepisodes(data.data)
                 setLoading(false)
-            })
+            }).catch(err => console.log(err))
         }
     }, [countEpisodes])
 
+    // ---- Make sure doens't throw error if array empty
 
     useEffect(() => {
 
@@ -58,8 +63,6 @@ export default () => {
 
         }
     }, [episodes])
-
-
 
     return (
         <div>
@@ -73,8 +76,8 @@ export default () => {
 
                     <div>
                         <img className='title' src="https://carlisletheacarlisletheatre.org/images/rick-and-morty-logo-svg-3.png" alt='Rick and Morty' />
-                        <CharactersData currentpage={currentpage} episodesList={episodesList} />
-                        <Pages totalPages={pages} setPage={setCurrentPage} />
+                        <CharactersData currentpage={currentpage} episodesList={episodesList} countCharacters={countCharacters} />
+                        <Pages totalPages={pages} setPage={setCurrentPage} currentpage={currentpage} />
                     </div>
                 )}
         </div>
