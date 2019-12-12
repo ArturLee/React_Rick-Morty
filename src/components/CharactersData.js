@@ -19,51 +19,51 @@ export default function Characters({ currentpage, episodesList, countCharacters 
     const [loading, setLoading] = useState(false)
     const currentPage = currentpage || 1
 
-    useEffect(() => {
-        let mounted = true; //fix this error index.js:1 Warning: Can't perform a React state update on an unmounted component. This is a no-op, but it indicates a memory leak in your application. To fix, cancel all subscriptions and asynchronous tasks in a useEffect cleanup function.
+    // useEffect(() => {
+    //     let mounted = true; //fix this error index.js:1 Warning: Can't perform a React state update on an unmounted component. This is a no-op, but it indicates a memory leak in your application. To fix, cancel all subscriptions and asynchronous tasks in a useEffect cleanup function.
 
-        setLoading(true)
-        axios.get(`${API_URL}character/?page=${currentPage}`).then(data => {
-            if (mounted) {
-                setCharacter(data.data.results)
-                setLoading(false)
-            }
-        })
-        return () => {
-            console.log('unmounted')
-            mounted = false
-        }
-    }, [currentPage])
+    //     setLoading(true)
+    //     axios.get(`${API_URL}character/?page=${currentPage}`).then(data => {
+    //         if (mounted) {
+    //             setCharacter(data.data.results)
+    //             setLoading(false)
+    //         }
+    //     }).then(err => console.log(err))
+    //     return () => {
+    //         console.log('unmounted')
+    //         mounted = false
+    //     }
+    // }, [currentPage])
 
 
 //
 // -------- Some picture doesnt load and throw error
 //
 
-    // useEffect(() => { 
-    //     setLoading(true)
-    //     if (countCharacters) {
-    //         let count_array = []
-    //         for (let i = 1; i <= countCharacters; i++) {
-    //             count_array.push(i)
-    //         }
-    //         const fetchData = async () => {
-    //             axios.get(`${API_URL}character/${count_array}`).then((data) => {
-    //                 setCharacterList(data.data)
+    useEffect(() => { 
+        setLoading(true)
+        if (countCharacters) {
+            let count_array = []
+            for (let i = 1; i <= countCharacters; i++) {
+                count_array.push(i)
+            }
+            const fetchData = async () => {
+                axios.get(`${API_URL}character/${count_array}`).then((data) => {
+                    setCharacterList(data.data)
 
-    //             })
-    //         }
-    //         fetchData()
-    //     }
-    // }, [countCharacters])
+                })
+            }
+            fetchData()
+        }
+    }, [countCharacters])
 
-    // useEffect(() => {
+    useEffect(() => {
 
-    //     if (characterList) {
-    //         setCharacter(characterList)
-    //         setLoading(false)
-    //     }
-    // }, [characterList])
+        if (characterList) {
+            setCharacter(characterList)
+            setLoading(false)
+        }
+    }, [characterList])
 
     const renderCharacter = (character) => {
         return (
