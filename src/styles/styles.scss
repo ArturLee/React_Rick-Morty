@@ -23,7 +23,8 @@ body {
   align-items: center;
   flex-wrap: wrap;
   max-width: 1300px;
-  margin: 0 auto;
+  margin: auto;
+  margin-left:-12px;
   ul {
     list-style-type: none;
   }
@@ -47,7 +48,6 @@ body {
 
   .flip-card-container:hover .flip-card {
     transform: rotateY(180deg);
-    animation-delay: 2s;
   }
 
   .flip-card-front,
@@ -233,4 +233,25 @@ body {
   100% {
     transform: rotate(360deg);
   }
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: lighten($backgroundColor,10); 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: lighten($backgroundColor,20); 
 }
