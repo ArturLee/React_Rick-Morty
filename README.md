@@ -1,6 +1,6 @@
 ## Rick and Morty - React
 
-This project is a coding challange for Front-end job at Gracious.
+This project is a coding challange for Front-end job.
 
 ## The goal 
 
